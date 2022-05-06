@@ -12,5 +12,10 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  gender:any;
+  Add(UserName:any,Email:any,Password:any,ConfirmPassword:any,ProfileImage:any,Gender:any){
+    let User = {UserName,Email,Password,ConfirmPassword,ProfileImage,Gender};
+    this.userService.Register(User).subscribe();
+    window.location.reload();
+  }
 }
